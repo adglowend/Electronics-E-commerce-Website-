@@ -1,0 +1,145 @@
+/* ============================================================
+   category.css — styles for /customer/category page
+   ============================================================ */
+
+.cat-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+}
+@media (max-width: 991px) {
+    .cat-layout { grid-template-columns: 1fr; }
+}
+
+.filter-sidebar {
+    background: #fff; border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+    position: sticky; top: 90px; align-self: start;
+}
+.filter-sidebar h6 {
+    font-weight: 700; color: #333;
+    margin-bottom: 12px; padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    font-size: .8rem; letter-spacing: .5px;
+}
+.filter-sidebar .filter-group + .filter-group { margin-top: 18px; }
+.filter-sidebar label {
+    font-size: .85rem; color: #555; cursor: pointer;
+}
+.filter-sidebar input[type="checkbox"],
+.filter-sidebar input[type="radio"] {
+    accent-color: #fd7e14;
+}
+.filter-sidebar .btn-apply {
+    background: #fd7e14; color: #fff; border: none;
+}
+.filter-sidebar .btn-apply:hover {
+    background: #e76b00; color: #fff;
+}
+.filter-sidebar .btn-reset {
+    background: #f1f3f5; color: #333; border: none;
+}
+.filter-sidebar .price-inputs {
+    display: flex; gap: 8px;
+}
+.filter-sidebar .price-inputs input { width: 50%; }
+
+.cat-grid .product-card-wrap {
+    transition: transform .25s, box-shadow .25s;
+}
+.cat-grid .product-card-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+}
+.product-card-img { position: relative; overflow: hidden; }
+.product-card-img img { transition: transform .4s; }
+.product-card-wrap:hover .product-card-img img { transform: scale(1.05); }
+
+.product-card-add {
+    position: absolute; left: 0; right: 0; bottom: 12px;
+    text-align: center; opacity: 0; transition: opacity .25s;
+}
+.product-card-wrap:hover .product-card-add { opacity: 1; }
+
+.product-card-qv {
+    position: absolute; top: 10px; right: 10px;
+    opacity: 0; transition: opacity .25s;
+}
+.product-card-wrap:hover .product-card-qv { opacity: 1; }
+
+.product-badge {
+    position: absolute; top: 10px; left: 10px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: .7rem; font-weight: 700; color: #fff;
+}
+.badge-new   { background: #0d6efd; }
+.badge-hot   { background: #dc3545; }
+.badge-sale  { background: #fd7e14; }
+.badge-stock { background: #198754; }
+
+.breadcrumb-cat { background: transparent; padding: 0; margin: 0; }
+.breadcrumb-cat a {
+    color: rgba(255, 255, 255, .85); text-decoration: none;
+}
+.breadcrumb-cat .breadcrumb-item.active { color: #fff; }
+
+.empty-cat {
+    background: #fff; border-radius: 12px;
+    padding: 60px 20px; text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+}
+.empty-cat i { font-size: 4rem; color: #fd7e14; }
+
+/* ============================================
+   Pagination override — same fix as home.css,
+   needed because template's style.css forces
+   `.pagination { display: inline-block }` which
+   breaks Bootstrap 5 flex layout on this page.
+   ============================================ */
+ul.pagination,
+nav ul.pagination,
+.pagination {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+.pagination .page-item {
+    margin: 0 !important;
+    display: list-item !important;
+}
+.pagination .page-item + .page-item { margin-top: 0 !important; }
+.pagination .page-link {
+    position: relative;
+    display: block !important;
+    color: var(--bs-dark);
+    padding: 8px 14px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid var(--bs-secondary);
+    margin: 0 2px;
+    border-radius: 4px;
+    line-height: 1.4;
+    transition: background-color .2s, color .2s;
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--bs-primary);
+    color: #fff;
+    border-color: var(--bs-primary);
+    z-index: 1;
+}
+.pagination .page-link:hover:not(.disabled) {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+.pagination .page-item.disabled .page-link {
+    color: #adb5bd;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}

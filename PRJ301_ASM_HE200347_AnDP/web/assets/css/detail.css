@@ -1,0 +1,27 @@
+/* ============================================================
+   detail.css — styles for /customer/detail (Product detail page)
+   ============================================================ */
+
+.detail-card {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+    padding: 24px;
+}
+.detail-card .price {
+    color: #e65100; font-size: 1.6rem; font-weight: 700;
+}
+
+.thumb {
+    width: 90px; height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.thumb:hover { border-color: #fd7e14; }
+
+.no-image-box {
+    background: #f1f3f5; color: #888;
+    padding: 60px 0; text-align: center;
+    border-radius: 8px;
+}

@@ -1,0 +1,59 @@
+/* ============================================================
+   cart.css — styles for /customer/cart page
+   ============================================================ */
+
+.cart-table th { font-weight: 700; background: #f8f9fa; }
+
+.qty-box {
+    display: inline-flex; align-items: center;
+    border: 1px solid #dee2e6; border-radius: 6px; overflow: hidden;
+}
+.qty-box button {
+    border: 0; background: #f1f3f5;
+    width: 34px; height: 34px;
+    font-size: 14px; cursor: pointer;
+}
+.qty-box button:hover { background: #e9ecef; }
+.qty-box input {
+    width: 60px; height: 34px; border: 0; text-align: center;
+    -moz-appearance: textfield;
+}
+.qty-box input::-webkit-outer-spin-button,
+.qty-box input::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+}
+
+.line-total { color: #e65100; font-weight: 700; }
+
+.total-box {
+    background: #fff8f0;
+    border: 2px solid #fd7e14;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.empty-cart {
+    background: #fff; border-radius: 12px;
+    padding: 60px 20px; text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+}
+.empty-cart i { font-size: 4rem; color: #fd7e14; }
+
+/* Payment method picker (COD / VNPay) */
+.payment-method-box {
+    background: #fff; border: 1px solid #dee2e6;
+    border-radius: 10px; padding: 16px;
+}
+.payment-method-box h6 { color: #333; font-weight: 700; }
+.payment-opt {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid #dee2e6; border-radius: 8px;
+    margin: 8px 0; cursor: pointer;
+    transition: background .15s, border-color .15s;
+    font-size: 14px;
+}
+.payment-opt:hover {
+    background: #fff8f0; border-color: #fd7e14;
+}
+.payment-opt input { accent-color: #fd7e14; }

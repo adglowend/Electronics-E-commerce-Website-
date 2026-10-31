@@ -1,0 +1,109 @@
+/* ============================================================
+   header.css — styles for common/customerHeader.jsp
+   Header, topbar, brand bar, navbar, hero band, footer.
+   ============================================================ */
+
+html, body { height: 100%; }
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    display: flex; flex-direction: column; min-height: 100vh;
+}
+
+/* Direct children of body must take full width even when body is a flex container */
+body > header,
+body > nav,
+body > div,
+body > section,
+body > main,
+body > footer { width: 100%; flex-shrink: 0; }
+
+/* Bootstrap container/rows must keep their fluid widths */
+.container, .container-fluid { width: 100%; max-width: 100%; }
+
+.page-wrap { flex: 1 0 auto; display: flex; flex-direction: column; min-height: 0; }
+.page-wrap > * { flex-shrink: 0; }
+footer { flex-shrink: 0; }
+
+/* ---------- Topbar ---------- */
+.topbar { background: #fafbfc; border-bottom: 1px solid #dee2e6; }
+.topbar .topbar-row { height: 45px; align-items: center; }
+
+/* ---------- Brand bar ---------- */
+.brand-bar {
+    padding-top: 1.5rem;   /* extra gap so brand bar doesn't sit flush with topbar */
+    padding-bottom: 1.25rem;
+    border-top: 1px solid transparent; /* layout stability */
+}
+.brand-bar .row { align-items: center; }
+.brand-logo {
+    color: #e65100;
+    margin: 0;
+    line-height: 1.2;
+    font-size: 1.85rem;
+    font-weight: 700;
+}
+.brand-logo i { margin-right: .5rem; }
+.brand-logo-mobile {
+    color: #e65100;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Top-right action group — wrap when crowded, vertically centered */
+.brand-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .85rem;
+}
+.brand-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    white-space: nowrap;
+}
+
+/* ---------- Navbar ---------- */
+.nav-bar-shell {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(230, 126, 34, .15);
+}
+.navbar-ecom { background: #0d6efd; }
+.navbar-ecom .nav-link,
+.navbar-ecom .navbar-brand { color: #fff !important; }
+.navbar-ecom .nav-link.active { font-weight: 700; text-decoration: underline; }
+
+.ecom-navbar { background: transparent; }
+.ecom-navbar .nav-link {
+    color: #555;
+    border-bottom: 3px solid transparent;
+    padding: 1rem 1.5rem;
+}
+.ecom-navbar .nav-link:hover { color: #e65100; }
+.ecom-navbar .nav-link.active {
+    color: #e65100;
+    border-bottom: 3px solid #e65100;
+    font-weight: 700;
+}
+.ecom-navbar .nav-link.admin-link { color: #f39c12; }
+.ecom-navbar .navbar-toggler { color: #e65100; }
+.ecom-navbar .ecom-toggler:focus { box-shadow: none; }
+
+/* ---------- Hero band ---------- */
+.hero-band {
+    background: linear-gradient(135deg, #fd7e14 0%, #e65100 100%);
+    color: #fff; padding: 50px 0;
+}
+.hero-band h1 { color: #fff; }
+.hero-band .breadcrumb-item a { color: rgba(255, 255, 255, .85); }
+.hero-band .breadcrumb-item.active { color: #fff; }
+
+/* ---------- Footer ---------- */
+footer { background: #212529; color: #adb5bd; padding: 40px 0 0; }
+footer a {
+    color: #adb5bd; text-decoration: none;
+    display: block; padding: 4px 0;
+}
+footer a:hover { color: #fff; }
